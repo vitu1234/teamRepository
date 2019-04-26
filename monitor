@@ -1,0 +1,17 @@
+#!/bin/bash
+
+prev=a
+
+while ((1))
+do
+	if [[ -e log.txt ]]
+	then
+		cur=$( tail -n 1 log.txt )
+		if [[ $cur != $prev ]] 
+		then
+			prev=$cur
+			echo "Spoiler Alert"
+			
+		fi
+	fi
+done
